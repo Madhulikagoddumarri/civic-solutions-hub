@@ -9,7 +9,7 @@ const statusConfig: Record<ComplaintStatus, { label: string; className: string }
 export default function StatusBadge({ status }: { status: ComplaintStatus }) {
   const { label, className } = statusConfig[status];
   return (
-    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold ${className}`}>
+    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${className}`}>
       {label}
     </span>
   );
