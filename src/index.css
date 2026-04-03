@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,56 +6,61 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 220 25% 14%;
+    --background: 225 25% 6%;
+    --foreground: 210 30% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 25% 14%;
+    --card: 225 20% 10%;
+    --card-foreground: 210 30% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 14%;
+    --popover: 225 20% 10%;
+    --popover-foreground: 210 30% 95%;
 
-    --primary: 215 75% 48%;
+    --primary: 250 85% 65%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 25% 93%;
-    --secondary-foreground: 220 25% 20%;
+    --secondary: 225 18% 16%;
+    --secondary-foreground: 210 20% 80%;
 
-    --muted: 210 20% 95%;
-    --muted-foreground: 215 12% 50%;
+    --muted: 225 15% 14%;
+    --muted-foreground: 215 15% 55%;
 
-    --accent: 162 60% 42%;
+    --accent: 175 70% 45%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 72% 55%;
+    --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 90%;
-    --input: 214 20% 90%;
-    --ring: 215 75% 48%;
+    --border: 225 15% 18%;
+    --input: 225 15% 18%;
+    --ring: 250 85% 65%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    --warning: 38 92% 50%;
+    --warning: 38 92% 55%;
     --warning-foreground: 0 0% 100%;
 
-    --success: 162 60% 42%;
+    --success: 162 70% 45%;
     --success-foreground: 0 0% 100%;
 
-    --info: 215 75% 48%;
+    --info: 210 85% 60%;
     --info-foreground: 0 0% 100%;
 
-    --civic-orange: 24 85% 55%;
-    --civic-purple: 255 55% 55%;
+    --neon-blue: 210 100% 60%;
+    --neon-purple: 260 90% 65%;
+    --neon-teal: 175 85% 50%;
+    --neon-pink: 330 85% 60%;
 
-    --sidebar-background: 220 25% 14%;
-    --sidebar-foreground: 210 20% 90%;
-    --sidebar-primary: 215 75% 58%;
+    --glass-bg: 225 20% 12%;
+    --glass-border: 225 20% 22%;
+
+    --sidebar-background: 225 28% 8%;
+    --sidebar-foreground: 210 20% 80%;
+    --sidebar-primary: 250 85% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 20% 20%;
+    --sidebar-accent: 225 20% 14%;
     --sidebar-accent-foreground: 210 20% 90%;
-    --sidebar-border: 220 20% 22%;
-    --sidebar-ring: 215 75% 48%;
+    --sidebar-border: 225 20% 16%;
+    --sidebar-ring: 250 85% 65%;
   }
 }
 
@@ -64,22 +69,114 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
   }
 }
 
 @layer utilities {
-  .glass-card {
-    @apply bg-card/80 backdrop-blur-lg border border-border/50 shadow-sm;
+  .glass {
+    background: hsl(var(--glass-bg) / 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border) / 0.5);
   }
+
+  .glass-strong {
+    background: hsl(var(--glass-bg) / 0.8);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid hsl(var(--glass-border) / 0.6);
+  }
+
+  .neu-raised {
+    box-shadow:
+      6px 6px 16px hsl(225 25% 3% / 0.5),
+      -4px -4px 12px hsl(225 15% 16% / 0.3);
+  }
+
+  .neu-inset {
+    box-shadow:
+      inset 4px 4px 10px hsl(225 25% 3% / 0.4),
+      inset -3px -3px 8px hsl(225 15% 16% / 0.2);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 20px hsl(var(--neon-purple) / 0.3), 0 0 60px hsl(var(--neon-purple) / 0.1);
+  }
+
+  .glow-teal {
+    box-shadow: 0 0 20px hsl(var(--neon-teal) / 0.3), 0 0 60px hsl(var(--neon-teal) / 0.1);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.3), 0 0 60px hsl(var(--neon-blue) / 0.1);
+  }
+
+  .glow-pink {
+    box-shadow: 0 0 20px hsl(var(--neon-pink) / 0.3), 0 0 60px hsl(var(--neon-pink) / 0.1);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-purple)), hsl(var(--neon-teal)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(var(--neon-blue) / 0.5), hsl(var(--neon-purple) / 0.5), hsl(var(--neon-teal) / 0.5));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+  }
+
   .status-reported {
-    @apply bg-[hsl(var(--warning)/_0.12)] text-[hsl(var(--warning))];
+    @apply bg-[hsl(var(--warning)/_0.15)] text-[hsl(var(--warning))];
+    box-shadow: 0 0 10px hsl(var(--warning) / 0.15);
   }
   .status-in-progress {
-    @apply bg-[hsl(var(--info)/_0.12)] text-[hsl(var(--info))];
+    @apply bg-[hsl(var(--neon-blue)/_0.15)] text-[hsl(var(--neon-blue))];
+    box-shadow: 0 0 10px hsl(var(--neon-blue) / 0.15);
   }
   .status-resolved {
-    @apply bg-[hsl(var(--success)/_0.12)] text-[hsl(var(--success))];
+    @apply bg-[hsl(var(--success)/_0.15)] text-[hsl(var(--success))];
+    box-shadow: 0 0 10px hsl(var(--success) / 0.15);
   }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--glass-border)) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--glass-border));
+    border-radius: 20px;
+  }
+}
+
+/* Background mesh gradient */
+.bg-mesh {
+  background:
+    radial-gradient(ellipse at 20% 50%, hsl(var(--neon-purple) / 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, hsl(var(--neon-blue) / 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, hsl(var(--neon-teal) / 0.05) 0%, transparent 50%),
+    hsl(var(--background));
 }
