@@ -91,7 +91,7 @@ export default function Profile() {
         {[
           { label: "Total Reports", value: "24", icon: FileText, color: "neon-purple" },
           { label: "Resolved", value: "18", icon: CheckCircle, color: "success" },
-          { label: "Points Earned", value: "1,250", icon: Award, color: "neon-teal" },
+          { label: "Points Earned", value: (profile?.points || 0).toLocaleString(), icon: Award, color: "neon-teal" },
           { label: "Avg Rating", value: "4.8", icon: Star, color: "warning" },
         ].map((stat, i) => (
           <motion.div
