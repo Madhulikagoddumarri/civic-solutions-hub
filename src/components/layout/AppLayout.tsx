@@ -162,10 +162,8 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             </AnimatePresence>
           </div>
 
-          {/* Avatar */}
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-neon-purple to-neon-teal flex items-center justify-center text-primary-foreground text-xs font-bold glow-purple">
-            JD
-          </div>
+          {/* Profile Dropdown */}
+          <ProfileDropdown />
         </header>
 
         <main className="flex-1 overflow-y-auto scrollbar-thin">
