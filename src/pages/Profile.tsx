@@ -27,8 +27,14 @@ const activityTimeline = [
 ];
 
 export default function Profile() {
+export default function Profile() {
+  const { profile } = useAuth();
   const [activeTab, setActiveTab] = useState("complaints");
   const userComplaints = mockComplaints.slice(0, 4);
+
+  const initials = profile?.full_name
+    ? profile.full_name.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2)
+    : "?";
 
   return (
     <div className="p-4 lg:p-6 max-w-4xl mx-auto space-y-6">
