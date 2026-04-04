@@ -11,7 +11,12 @@ import WorkflowVisualization from "@/components/WorkflowVisualization";
 import { Button } from "@/components/ui/button";
 
 export default function Dashboard() {
+  const { profile } = useAuth();
   const [complaints, setComplaints] = useState(mockComplaints);
+
+  const firstName = profile?.full_name?.split(" ")[0] || "User";
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
 
   const stats = {
     total: complaints.length,
