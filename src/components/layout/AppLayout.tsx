@@ -2,14 +2,16 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  LayoutDashboard, PlusCircle, Map, Shield, Bell, Menu, X, LogOut, ChevronRight, Zap
+  LayoutDashboard, PlusCircle, Map, Shield, Bell, Menu, X, LogOut, ChevronRight, Zap, Trophy
 } from "lucide-react";
 import { notifications } from "@/lib/mock-data";
+import ProfileDropdown from "@/components/ProfileDropdown";
 
 const navItems = [
   { path: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { path: "/submit", label: "Report Issue", icon: PlusCircle },
   { path: "/map", label: "Live Map", icon: Map },
+  { path: "/leaderboard", label: "Leaderboard", icon: Trophy },
   { path: "/admin", label: "Admin Panel", icon: Shield },
 ];
 
@@ -160,10 +162,8 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             </AnimatePresence>
           </div>
 
-          {/* Avatar */}
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-neon-purple to-neon-teal flex items-center justify-center text-primary-foreground text-xs font-bold glow-purple">
-            JD
-          </div>
+          {/* Profile Dropdown */}
+          <ProfileDropdown />
         </header>
 
         <main className="flex-1 overflow-y-auto scrollbar-thin">
