@@ -27,7 +27,6 @@ const activityTimeline = [
 ];
 
 export default function Profile() {
-export default function Profile() {
   const { profile } = useAuth();
   const [activeTab, setActiveTab] = useState("complaints");
   const userComplaints = mockComplaints.slice(0, 4);
