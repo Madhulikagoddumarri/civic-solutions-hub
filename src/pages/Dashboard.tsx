@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FileText, Clock, CheckCircle, AlertTriangle, PlusCircle, TrendingUp, Activity } from "lucide-react";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/contexts/AuthContext";
 import { mockComplaints } from "@/lib/mock-data";
 import StatsCard from "@/components/StatsCard";
 import ComplaintCard from "@/components/ComplaintCard";
@@ -9,7 +11,12 @@ import WorkflowVisualization from "@/components/WorkflowVisualization";
 import { Button } from "@/components/ui/button";
 
 export default function Dashboard() {
+  const { profile } = useAuth();
   const [complaints, setComplaints] = useState(mockComplaints);
+
+  const firstName = profile?.full_name?.split(" ")[0] || "User";
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
 
   const stats = {
     total: complaints.length,
@@ -41,7 +48,7 @@ export default function Dashboard() {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold font-display gradient-text"
           >
-            Good evening, John 👋
+            {greeting}, {firstName} 👋
           </motion.h1>
           <p className="text-sm text-muted-foreground mt-1">Here's what's happening in your community</p>
         </div>
