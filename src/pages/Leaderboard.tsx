@@ -13,9 +13,9 @@ const leaderboardData = [
 ];
 
 const rankStyles: Record<number, { gradient: string; glow: string; icon: React.ReactNode }> = {
-  1: { gradient: "from-yellow-400 to-amber-500", glow: "shadow-[0_0_20px_rgba(251,191,36,0.3)]", icon: <Trophy className="w-5 h-5 text-yellow-400" /> },
-  2: { gradient: "from-gray-300 to-gray-400", glow: "shadow-[0_0_15px_rgba(156,163,175,0.2)]", icon: <Medal className="w-5 h-5 text-gray-300" /> },
-  3: { gradient: "from-amber-600 to-amber-700", glow: "shadow-[0_0_15px_rgba(180,83,9,0.2)]", icon: <Medal className="w-5 h-5 text-amber-600" /> },
+  1: { gradient: "from-warning to-warning/80", glow: "shadow-[0_0_20px_hsl(var(--warning)/0.3)]", icon: <Trophy className="w-5 h-5 text-warning" /> },
+  2: { gradient: "from-muted-foreground to-muted", glow: "shadow-[0_0_15px_hsl(var(--muted-foreground)/0.2)]", icon: <Medal className="w-5 h-5 text-muted-foreground" /> },
+  3: { gradient: "from-warning/70 to-warning/50", glow: "shadow-[0_0_15px_hsl(var(--warning)/0.15)]", icon: <Medal className="w-5 h-5 text-warning/70" /> },
 };
 
 export default function Leaderboard() {
