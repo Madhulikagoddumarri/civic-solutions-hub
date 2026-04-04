@@ -65,10 +65,10 @@ export default function Profile() {
           </div>
 
           <div className="flex-1 text-center sm:text-left">
-            <h1 className="text-xl font-bold font-display text-foreground">John Doe</h1>
+            <h1 className="text-xl font-bold font-display text-foreground">{profile?.full_name || "User"}</h1>
             <div className="flex items-center justify-center sm:justify-start gap-2 mt-1 text-sm text-muted-foreground">
               <Mail className="w-3.5 h-3.5" />
-              john.doe@email.com
+              {profile?.email || "No email"}
             </div>
             <div className="flex items-center justify-center sm:justify-start gap-2 mt-1 text-sm text-muted-foreground">
               <MapPin className="w-3.5 h-3.5" />
