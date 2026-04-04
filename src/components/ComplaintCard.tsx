@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, ThumbsUp, Clock, Flame } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Complaint, issueTypeIcons } from "@/lib/mock-data";
 import StatusBadge from "./StatusBadge";
 import PriorityBadge from "./PriorityBadge";
