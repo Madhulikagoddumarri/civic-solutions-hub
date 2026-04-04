@@ -22,11 +22,6 @@ export default function ComplaintCard({ complaint, index = 0, onUpvote, trending
       whileHover={{ y: -2 }}
       onClick={() => navigate(`/complaint/${complaint.id}`)}
       className={`glass rounded-2xl p-4 neu-raised cursor-pointer transition-all duration-300 group ${
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.06 }}
-      whileHover={{ y: -2 }}
-      className={`glass rounded-2xl p-4 neu-raised cursor-pointer transition-all duration-300 group ${
         trending ? "gradient-border glow-purple" : ""
       }`}
     >
