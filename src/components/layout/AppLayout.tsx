@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   LayoutDashboard, PlusCircle, Map, Shield, Bell, Menu, X, LogOut, ChevronRight, Zap, Trophy
 } from "lucide-react";
 import { notifications } from "@/lib/mock-data";
+import { useAuth } from "@/contexts/AuthContext";
 import ProfileDropdown from "@/components/ProfileDropdown";
 
 const navItems = [
