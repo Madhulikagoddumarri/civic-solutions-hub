@@ -13,8 +13,15 @@ interface Props {
 }
 
 export default function ComplaintCard({ complaint, index = 0, onUpvote, trending }: Props) {
+  const navigate = useNavigate();
   return (
     <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.06 }}
+      whileHover={{ y: -2 }}
+      onClick={() => navigate(`/complaint/${complaint.id}`)}
+      className={`glass rounded-2xl p-4 neu-raised cursor-pointer transition-all duration-300 group ${
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.06 }}
