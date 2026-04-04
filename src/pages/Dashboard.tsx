@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FileText, Clock, CheckCircle, AlertTriangle, PlusCircle, TrendingUp, Activity } from "lucide-react";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/contexts/AuthContext";
 import { mockComplaints } from "@/lib/mock-data";
 import StatsCard from "@/components/StatsCard";
 import ComplaintCard from "@/components/ComplaintCard";
