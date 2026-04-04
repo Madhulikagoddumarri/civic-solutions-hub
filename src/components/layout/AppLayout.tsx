@@ -11,6 +11,7 @@ const navItems = [
   { path: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { path: "/submit", label: "Report Issue", icon: PlusCircle },
   { path: "/map", label: "Live Map", icon: Map },
+  { path: "/leaderboard", label: "Leaderboard", icon: Trophy },
   { path: "/admin", label: "Admin Panel", icon: Shield },
 ];
 
