@@ -28,7 +28,6 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     await signOut();
     navigate("/");
   };
-  const unread = notifications.filter(n => !n.read).length;
 
   return (
     <div className="min-h-screen flex bg-mesh">
