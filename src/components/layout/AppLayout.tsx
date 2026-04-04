@@ -104,13 +104,13 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               <span className="text-xs text-success font-medium">All Systems Operational</span>
             </div>
           </div>
-          <Link
-            to="/"
-            className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-muted-foreground hover:text-foreground transition-colors"
+          <button
+            onClick={handleSignOut}
+            className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-muted-foreground hover:text-foreground transition-colors w-full"
           >
             <LogOut className="w-4 h-4" />
             Sign Out
-          </Link>
+          </button>
         </div>
       </aside>
 
