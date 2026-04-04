@@ -51,9 +51,13 @@ export default function Profile() {
           {/* Avatar */}
           <div className="relative group">
             <div className="w-24 h-24 rounded-full bg-gradient-to-br from-neon-purple via-neon-blue to-neon-teal p-[3px] glow-purple">
-              <div className="w-full h-full rounded-full bg-card flex items-center justify-center text-3xl font-bold font-display gradient-text">
-                JD
-              </div>
+              {profile?.avatar_url ? (
+                <img src={profile.avatar_url} alt="" className="w-full h-full rounded-full object-cover" />
+              ) : (
+                <div className="w-full h-full rounded-full bg-card flex items-center justify-center text-3xl font-bold font-display gradient-text">
+                  {initials}
+                </div>
+              )}
             </div>
             <button className="absolute bottom-0 right-0 w-8 h-8 rounded-full glass flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
               <Camera className="w-3.5 h-3.5 text-foreground" />
