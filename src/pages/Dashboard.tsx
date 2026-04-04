@@ -48,7 +48,7 @@ export default function Dashboard() {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold font-display gradient-text"
           >
-            Good evening, John 👋
+            {greeting}, {firstName} 👋
           </motion.h1>
           <p className="text-sm text-muted-foreground mt-1">Here's what's happening in your community</p>
         </div>
