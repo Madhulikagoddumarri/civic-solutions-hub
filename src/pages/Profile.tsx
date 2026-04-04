@@ -4,6 +4,7 @@ import {
   User, Mail, MapPin, Calendar, Award, Star, TrendingUp,
   FileText, CheckCircle, Clock, AlertTriangle, Edit2, Camera
 } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 import { mockComplaints, issueTypeIcons } from "@/lib/mock-data";
 import StatusBadge from "@/components/StatusBadge";
 import { Button } from "@/components/ui/button";
