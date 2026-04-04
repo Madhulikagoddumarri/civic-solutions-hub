@@ -14,7 +14,131 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      complaint_votes: {
+        Row: {
+          complaint_id: string
+          created_at: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          complaint_id: string
+          created_at?: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          complaint_id?: string
+          created_at?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "complaint_votes_complaint_id_fkey"
+            columns: ["complaint_id"]
+            isOneToOne: false
+            referencedRelation: "complaints"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      complaints: {
+        Row: {
+          created_at: string
+          department: string | null
+          description: string
+          id: string
+          image_url: string | null
+          is_emergency: boolean
+          issue_type: string
+          location_address: string | null
+          location_lat: number | null
+          location_lng: number | null
+          priority: string
+          rating: number | null
+          resolved_image_url: string | null
+          status: string
+          title: string
+          updated_at: string
+          upvotes: number
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          department?: string | null
+          description: string
+          id?: string
+          image_url?: string | null
+          is_emergency?: boolean
+          issue_type: string
+          location_address?: string | null
+          location_lat?: number | null
+          location_lng?: number | null
+          priority?: string
+          rating?: number | null
+          resolved_image_url?: string | null
+          status?: string
+          title: string
+          updated_at?: string
+          upvotes?: number
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          department?: string | null
+          description?: string
+          id?: string
+          image_url?: string | null
+          is_emergency?: boolean
+          issue_type?: string
+          location_address?: string | null
+          location_lat?: number | null
+          location_lng?: number | null
+          priority?: string
+          rating?: number | null
+          resolved_image_url?: string | null
+          status?: string
+          title?: string
+          updated_at?: string
+          upvotes?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          points: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          points?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          points?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
