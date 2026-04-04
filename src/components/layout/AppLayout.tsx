@@ -18,8 +18,16 @@ const navItems = [
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { signOut } = useAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [notifOpen, setNotifOpen] = useState(false);
+  const unread = notifications.filter(n => !n.read).length;
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/");
+  };
   const unread = notifications.filter(n => !n.read).length;
 
   return (
